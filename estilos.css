@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 80mm;
+    margin: 0 0;
+    overflow: auto;
+  }
+  
+  .receta {
+    width: 100%; /* Ancho de la receta */
+    margin: 0 0;
+    padding: 10px;
+    border: none; /* Eliminar los bordes */
+  }
+  
+  .titulo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .item {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .medicamento {
+    flex-grow: 1; /* Para que ocupe el espacio restante */
+  }
+  
+  .dosis {
+    width: 80px; /* Ancho para la dosis */
+  }
+  
+  .horario {
+    width: 100px; /* Ancho para el horario */
+  }
+  
