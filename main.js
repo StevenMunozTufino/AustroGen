@@ -16,16 +16,7 @@ function obtenerParametros() {
     var cuerpoPagina = document.getElementsByTagName("body")[0];
     var receta = document.createElement("div");
     receta.className = "receta";
-    
-    var logo = document.createElement("div");
-    logo.className = "logo";
-    logo.innerHTML = "<img src='logoHospital.png' alt='Logo'>";
-    receta.appendChild(logo);
 
-    var titulo = document.createElement("h2");
-    titulo.className = "titulo";
-    titulo.textContent = "Receta Médica";
-    receta.appendChild(titulo);
 
     // Verificar que se hayan recibido todos los parámetros necesarios
     if ('medicamentos' in parametros && 'dosis' in parametros && 'horario' in parametros) {
