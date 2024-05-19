@@ -16,6 +16,14 @@ function generarReceta() {
   var receta = document.createElement("div");
   receta.className = "receta";
 
+  // Verificar que se haya recibido el parámetro de fecha
+  if ('fecha' in parametros) {
+    var fechaElement = document.createElement("div");
+    fechaElement.className = "fecha";
+    fechaElement.textContent = parametros['fecha'];
+    receta.appendChild(fechaElement);
+  }
+
   // Verificar que se haya recibido el parámetro necesario
   if ('medicamento' in parametros) {
     var medicamentos = parametros['medicamento'].split(",");
