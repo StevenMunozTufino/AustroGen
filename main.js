@@ -18,10 +18,8 @@ function generarReceta() {
 
   // Verificar que se haya recibido el parámetro de fecha
   if ('fecha' in parametros) {
-    var fechaElement = document.createElement("div");
-    fechaElement.className = "fecha";
-    fechaElement.textContent = parametros['fecha'];
-    receta.appendChild(fechaElement);
+    var fechaElement = document.getElementById("fecha-receta");
+    fechaElement.textContent += parametros['fecha'];
   }
 
   // Verificar que se haya recibido el parámetro necesario
