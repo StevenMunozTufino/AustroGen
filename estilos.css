@@ -1,9 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 80mm;
-    margin: 0 0;
-    overflow: auto;
-  }
+  font-family: Arial, sans-serif !important;
+  max-width: 80mm !important;
+  overflow: auto !important;
+}
   
   .receta {
     width: 100%; /* Ancho de la receta */
@@ -53,4 +52,10 @@ body {
 #logo h1, #logo p {
     margin: 0;
     font-size: 16px;
+}
+#qr-code {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 33.33%;
 }

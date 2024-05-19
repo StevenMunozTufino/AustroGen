@@ -9,51 +9,50 @@ function obtenerParametros() {
     return parametros;
   }
 
+// Función para generar la receta médica
+function generarReceta() {
+  var parametros = obtenerParametros();
+  var recetaScript = document.getElementById("receta-script");
+  var receta = document.createElement("div");
+  receta.className = "receta";
 
-   // Función para generar la receta médica
-   function generarReceta() {
-    var parametros = obtenerParametros();
-    var cuerpoPagina = document.getElementsByTagName("body")[0];
-    var receta = document.createElement("div");
-    receta.className = "receta";
-
-
-    // Verificar que se hayan recibido todos los parámetros necesarios
-    if ('medicamentos' in parametros && 'dosis' in parametros && 'horario' in parametros) {
-      var medicamentos = parametros['medicamentos'].split(",");
-      var dosis = parametros['dosis'].split(",");
-      var horario = parametros['horario'].split(",");
+  // Verificar que se hayan recibido todos los parámetros necesarios
+  if ('medicamentos' in parametros && 'dosis' in parametros && 'horario' in parametros) {
+    var medicamentos = parametros['medicamentos'].split(",");
+    var dosis = parametros['dosis'].split(",");
+    var horario = parametros['horario'].split(",");
+    
+    for (var i = 0; i < medicamentos.length; i++) {
+      var item = document.createElement("div");
+      item.className = "item";
+      var medicamentoElement = document.createElement("div");
+      medicamentoElement.className = "medicamento";
+      medicamentoElement.textContent = medicamentos[i];
+      var dosisElement = document.createElement("div");
+      dosisElement.className = "dosis";
+      dosisElement.textContent = dosis[i];
+      var horarioElement = document.createElement("div");
+      horarioElement.className = "horario";
+      horarioElement.textContent = horario[i];
       
-      for (var i = 0; i < medicamentos.length; i++) {
-        var item = document.createElement("div");
-        item.className = "item";
-        var medicamentoElement = document.createElement("div");
-        medicamentoElement.className = "medicamento";
-        medicamentoElement.textContent = medicamentos[i];
-        var dosisElement = document.createElement("div");
-        dosisElement.className = "dosis";
-        dosisElement.textContent = dosis[i];
-        var horarioElement = document.createElement("div");
-        horarioElement.className = "horario";
-        horarioElement.textContent = horario[i];
-        
-        item.appendChild(medicamentoElement);
-        item.appendChild(dosisElement);
-        item.appendChild(horarioElement);
-        
-        receta.appendChild(item);
-      }
+      item.appendChild(medicamentoElement);
+      item.appendChild(dosisElement);
+      item.appendChild(horarioElement);
       
-    } else {
-      var mensajeError = document.createElement("p");
-      mensajeError.textContent = "Error: No se han proporcionado todos los parámetros necesarios.";
-      receta.appendChild(mensajeError);
+      receta.appendChild(item);
     }
     
-    cuerpoPagina.appendChild(receta);
-    // Imprimir la página automáticamente
-    window.print();
+    
+  } else {
+    var mensajeError = document.createElement("p");
+    mensajeError.textContent = "Error: No se han proporcionado todos los parámetros necesarios.";
+    receta.appendChild(mensajeError);
   }
+  
+  recetaScript.appendChild(receta);
+  // Imprimir la página automáticamente
+  window.print();
+}
 
-  // Llamar a la función cuando la página haya cargado
-  window.onload = generarReceta;
+// Llamar a la función cuando la página haya cargado
+window.onload = generarReceta;
