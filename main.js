@@ -10,7 +10,6 @@ function obtenerParametros() {
   }
 
 // Función para generar la receta médica
-// Función para generar la receta médica
 function generarReceta() {
   var parametros = obtenerParametros();
   var recetaScript = document.getElementById("receta-script");
@@ -19,14 +18,17 @@ function generarReceta() {
 
   // Verificar que se haya recibido el parámetro necesario
   if ('medicamento' in parametros) {
-    var item = document.createElement("div");
-    item.className = "item";
-    var medicamentoElement = document.createElement("div");
-    medicamentoElement.className = "medicamento";
-    medicamentoElement.textContent = parametros['medicamento'];
-    
-    item.appendChild(medicamentoElement);
-    receta.appendChild(item);
+    var medicamentos = parametros['medicamento'].split(",");
+    for (var i = 0; i < medicamentos.length; i++) {
+      var item = document.createElement("div");
+      item.className = "item";
+      var medicamentoElement = document.createElement("div");
+      medicamentoElement.className = "medicamento";
+      medicamentoElement.textContent = medicamentos[i];
+      
+      item.appendChild(medicamentoElement);
+      receta.appendChild(item);
+    }
   } else {
     var mensajeError = document.createElement("p");
     mensajeError.textContent = "Error: No se ha proporcionado el parámetro necesario.";
