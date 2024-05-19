@@ -12,15 +12,22 @@ function obtenerParametros() {
 // Función para generar la receta médica
 function generarReceta() {
   var parametros = obtenerParametros();
-  var recetaScript = document.getElementById("receta-script");
-  var receta = document.createElement("div");
-  receta.className = "receta";
 
   // Verificar que se haya recibido el parámetro de fecha
   if ('fecha' in parametros) {
     var fechaElement = document.getElementById("fecha-receta");
     fechaElement.textContent += parametros['fecha'];
   }
+
+  // Verificar que se haya recibido el parámetro de nombre de la mascota
+  if ('mascota' in parametros) {
+    var mascotaElement = document.getElementById("nombre-mascota");
+    mascotaElement.textContent += parametros['mascota'];
+  }
+
+  var recetaScript = document.getElementById("receta-script");
+  var receta = document.createElement("div");
+  receta.className = "receta";
 
   // Verificar que se haya recibido el parámetro necesario
   if ('medicamento' in parametros) {
