@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif !important;
-  max-width: 80mm !important;
+  max-width: 148mm !important;
   overflow: auto !important;
+  height: 210mm !important;
   border: 1px solid black;
 
   position: relative; /* Agregar esta línea */
@@ -10,6 +11,7 @@ body {
   
   .receta {
     width: 100%; /* Ancho de la receta */
+    height: 100%;
     margin: 0 0;
     padding: 5px;
     border: none; /* Eliminar los bordes */
@@ -23,6 +25,7 @@ body {
   .logo {
     text-align: center;
   }
+  
   
   .item {
     margin-bottom: 5px;
@@ -50,6 +53,9 @@ body {
 
 #logo img {
     width: 200px; /* Ajusta esto según el tamaño de tu logo */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #logo h1, #logo p {
