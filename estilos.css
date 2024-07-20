@@ -2,8 +2,8 @@ body {
   font-family: Arial, sans-serif !important;
   max-width: 148mm !important;
   overflow: auto !important;
-  height: 210mm !important;
-  border: 1px solid black;
+  height: 180mm !important;
+
 
   position: relative; /* Agregar esta línea */
 
@@ -66,5 +66,6 @@ body {
 #qr-code {
   position: absolute; /* Cambiar esta línea */
   right: 0;
-  width: 33.33%;
+  bottom: 0;
+  width: 25%;
 }
